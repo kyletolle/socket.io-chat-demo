@@ -5,3 +5,9 @@ block content
   form(action='')
     input#m(autocomplete='off')
     button Send
+
+  script(src="/socket.io/socket.io.js")
+  // Need the dot after script in order to write JS inline
+  // As mentioned at https://stackoverflow.com/a/22880496/249218
+  script.
+    var socket = io();
