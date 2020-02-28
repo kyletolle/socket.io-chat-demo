@@ -1,5 +1,7 @@
 # socket.io-chat-demo
 
+A simple chat app demo using [socket.io](https://socket.io).
+
 Created via
 ```
 npx express-generator socket.io-chat-demo
