@@ -11,3 +11,18 @@ block content
   // As mentioned at https://stackoverflow.com/a/22880496/249218
   script.
     var socket = io();
+    var form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const msgEl = document.querySelector('#m');
+      socket.emit('chat message', msgEl.value);
+      msgEl.value = '';
+      return false;
+    });
+
+    socket.on('chat message', msg => {
+      const messagesEl = document.querySelector('#messages') ;
+      const newLi = document.createElement('li');
+      newLi.innerText = msg;
+      messagesEl.appendChild(newLi);
+    });
